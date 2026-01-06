@@ -62,7 +62,7 @@
                     </span> --}}
                 </div>
                 <h1 class="text-white mb-6 font-headline leading-tight">
-                    What Makes Us Different?
+                    What Makes Us Different...?
                 </h1>
                 <p class="text-white/90 text-xl md:text-2xl mb-8 leading-relaxed">
                     21<sup>st</sup>-century success requires digital literacy, critical thinking, creativity,
@@ -73,7 +73,7 @@
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="{{ route('what_makes_us_different') }}"
                         class="btn btn-accent text-lg px-8 py-4 shadow-elevated hover:shadow-xl">
-                        <span>Find Out More</span>
+                        <span>Find Out More...</span>
                         <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                     <a href="https://wa.me/6282114775734"
