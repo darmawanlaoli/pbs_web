@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <!-- News Ticker -->
 <div class="bg-gradient-to-r from-primary to-secondary text-white py-3 overflow-hidden">
     <div class="container-custom">
@@ -35,7 +34,7 @@
 <section class="relative h-screen min-h-[600px] flex items-center overflow-hidden">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
-        <img src="{{ asset('images/hero/hero-bg-1.png') }}"
+        <img src="{{ asset('images/hero/hero-bg-1.webp') }}"
             alt="Siswa-siswa EduVision Academy sedang belajar dengan antusias di ruang kelas modern yang dilengkapi teknologi pembelajaran interaktif"
             class="w-full h-full object-cover"
             onerror="this.src='https://img.rocket.new/generatedImages/rocket_gen_img_1633e6517-1765115190697.png'; this.onerror=null;">
@@ -49,20 +48,20 @@
             <div class="col-7">
                 <div class="inline-block mb-6" style="display: flex">
                     <div style="padding-right: 20px">
-                        <img width="70px" src="{{ asset('images/logo_ipc.png') }}" alt="">
+                        <img width="70px" src="{{ asset('images/logo_ipc.webp') }}" alt="">
                     </div>
                     <div style="padding-right: 20px">
-                        <img width="70px" src="{{ asset('images/logo_imyc.png') }}" alt="">
+                        <img width="70px" src="{{ asset('images/logo_imyc.webp') }}" alt="">
                     </div>
                     <div>
-                        <img width="280px" src="{{ asset('images/ban_sm.png') }}" alt="">
+                        <img width="280px" src="{{ asset('images/ban_sm.webp') }}" alt="">
                     </div>
                     {{-- <span class="bg-accent text-white px-4 py-2 rounded-full text-sm font-semibold">
                         <i class="fas fa-star mr-2"></i>Accredited A from BAN-SM
                     </span> --}}
                 </div>
                 <h1 class="text-white mb-6 font-headline leading-tight">
-                    What Makes Us Different...?
+                    What Makes Us Different?
                 </h1>
                 <p class="text-white/90 text-xl md:text-2xl mb-8 leading-relaxed">
                     21<sup>st</sup>-century success requires digital literacy, critical thinking, creativity,
@@ -73,7 +72,7 @@
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="{{ route('what_makes_us_different') }}"
                         class="btn btn-accent text-lg px-8 py-4 shadow-elevated hover:shadow-xl">
-                        <span>Find Out More...</span>
+                        <span>Find Out More</span>
                         <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                     <a href="https://wa.me/6282114775734"
@@ -114,7 +113,7 @@
             <!-- SD Card -->
             <div class="card group overflow-hidden">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="{{ asset('images/building/peachblossoms_kindergarten.png') }}"
+                    <img src="{{ asset('images/building/peachblossoms_kindergarten.webp') }}"
                         alt="Gedung Sekolah Dasar (SD) EduVision Academy dengan fasilitas modern dan area bermain yang luas untuk siswa kelas 1-6"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         onerror="this.src='https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=2832&auto=format&fit=crop'; this.onerror=null;">
@@ -144,7 +143,7 @@
             <!-- SMP Card -->
             <div class="card group overflow-hidden">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="{{ asset('images/building/peachblossoms_primary.png') }}"
+                    <img src="{{ asset('images/building/peachblossoms_primary.webp') }}"
                         alt="Gedung Sekolah Menengah Pertama (SMP) EduVision Academy dengan laboratorium sains dan ruang kelas teknologi untuk siswa kelas 7-9"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         onerror="
@@ -177,7 +176,7 @@
             <!-- SMA Card -->
             <div class="card group overflow-hidden">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="{{ asset('images/building/peachblossoms_high_school.png') }}"
+                    <img src="{{ asset('images/building/peachblossoms_high_school.webp') }}"
                         alt="Gedung Sekolah Menengah Atas (SMA) EduVision Academy dengan fasilitas perpustakaan digital dan ruang diskusi untuk siswa kelas 10-12"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         onerror="this.src='https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=2786&auto=format&fit=crop'; this.onerror=null;">

@@ -26,8 +26,7 @@
                 <!-- Logo -->
                 <a href="{{ route('home') }}" class="flex items-center space-x-3 group">
                     <div class="relative">
-                        <img style="width: 48px;"
-                            src="https://elearning.peachblossomsschool.sch.id/assets/images/logos/logo.png" alt="">
+                        <img style="width: 48px;" src="{{ asset('images/logo.webp') }}" alt="">
                     </div>
                     <div class="flex flex-col">
                         <span class="font-headline font-bold text-xl text-primary">PEACHBLOSSOMS SCHOOL</span>
