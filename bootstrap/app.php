@@ -13,6 +13,11 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         //
     })
+
+    ->withMiddleware(function (Middleware $middleware) {
+        $middleware->redirectGuestsTo('/admin/login');
+    })
+
     ->withExceptions(function (Exceptions $exceptions): void {
         //
     })->create();

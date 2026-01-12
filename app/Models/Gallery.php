@@ -21,6 +21,9 @@ class Gallery extends Authenticatable
         'unit',
         'title',
         'description',
+        'album',
+        'link',
+        'date',
         'created_at',
         'updated_at',
 

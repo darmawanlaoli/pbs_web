@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\ImageGallery;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -30,3 +33,24 @@ Route::get('/news_events/{id}', [HomeController::class, 'newsEventDetail'])->nam
 Route::get('/articles', [HomeController::class, 'articles'])->name('articles');
 Route::get('/articles/{id}', [HomeController::class, 'articleDetail'])->name('article_detail');
 Route::get('/what_makes_us_different', [HomeController::class, 'whatMakesUsDifferent'])->name('what_makes_us_different');
+
+
+// Routes admin
+
+Route::get('/admin/login', [LoginController::class, 'index'])->name('admin.login');
+
+Route::post('/admin/login', [LoginController::class, 'login']);
+
+Route::post('/admin/logout', [LoginController::class, 'logout'])->name('admin.logout');
+
+
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [Dashboard::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin/image', [ImageGallery::class, 'index'])->name('admin.image');
+    Route::get('/admin/image/create', [ImageGallery::class, 'create'])->name('admin.image.create');
+    Route::post('/admin/image/store', [ImageGallery::class, 'store'])->name('admin.image.store');
+    Route::delete('/admin/image/{gallery}', [ImageGallery::class, 'destroy'])->name('admin.image.destroy');
+    Route::get('/admin/image/edit', [ImageGallery::class, 'edit'])->name('admin.image.edit');
+});
