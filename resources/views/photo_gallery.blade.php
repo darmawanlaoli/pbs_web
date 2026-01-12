@@ -87,7 +87,7 @@
                                         @if ($gallery->unit == 'Kinder')
                                         Preschool & Kindergarten
 
-                                        @elseif ($gallery->unit == 'JHS')
+                                        @elseif ($gallery->unit == 'High School')
                                         High School
                                         @elseif ($gallery->unit == 'Primary')
                                         Primary School
