@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="EduVision Academy - Lembaga pendidikan modern yang memberdayakan potensi setiap siswa melalui pendekatan pembelajaran inovatif dari SD, SMP, hingga SMA.">
+        content="Peachblossoms School - sekolah dengan kurikulum internasional di Harapan Indah Bekasi">
     <meta name="keywords"
-        content="sekolah, pendidikan, SD, SMP, SMA, EduVision Academy, sekolah terbaik, pendidikan berkualitas">
+        content="sekolah, pendidikan, SD, SMP, SMA, peachblossoms school, sekolah terbaik, pendidikan berkualitas sekolah di harapan indah, sekolah di bekasi">
     <title>Peachblossoms School Harapan Indah Bekasi</title>
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -18,6 +18,8 @@
         src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Feduvision7008back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.10">
     </script>
     <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+    <link rel="icon" type="image/x-icon" href="{{ assets('images/logo.webp') }}">
+
 </head>
 
 <body class="bg-background">
@@ -167,7 +169,8 @@
                                 class="block px-4 py-2 text-sm text-text-secondary hover:text-primary">School
                                 Profile</a>
                             <a href="about_us.html#leadership"
-                                class="block px-4 py-2 text-sm text-text-secondary hover:text-primary">Vision, Mission &
+                                class="block px-4 py-2 text-sm text-text-secondary hover:text-primary">Vision, Mission
+                                &
                                 Value</a>
                             <a href="about_us.html#facilities"
                                 class="block px-4 py-2 text-sm text-text-secondary hover:text-primary">Curriculum</a>
@@ -326,7 +329,8 @@
                     </p>
                     <div class="flex space-x-6 text-sm">
                         <a href="javascript:void(0)"
-                            class="text-white/60 hover:text-accent transition-colors duration-300">Kebijakan Privasi</a>
+                            class="text-white/60 hover:text-accent transition-colors duration-300">Kebijakan
+                            Privasi</a>
                         <a href="javascript:void(0)"
                             class="text-white/60 hover:text-accent transition-colors duration-300">Syarat &
                             Ketentuan</a>
@@ -341,90 +345,90 @@
     <!-- JavaScript -->
     <script>
         // Mobile Menu Toggle
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileAboutBtn = document.getElementById('mobile-about-btn');
-            const mobileAboutMenu = document.getElementById('mobile-about-menu');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileAboutBtn = document.getElementById('mobile-about-btn');
+        const mobileAboutMenu = document.getElementById('mobile-about-menu');
 
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                const icon = mobileMenuBtn.querySelector('i');
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-times');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        mobileAboutBtn.addEventListener('click', () => {
+            mobileAboutMenu.classList.toggle('hidden');
+            const icon = mobileAboutBtn.querySelector('i');
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+        });
+
+        // Testimonial Slider
+        const testimonialTrack = document.getElementById('testimonial-track');
+        const prevBtn = document.getElementById('prev-testimonial');
+        const nextBtn = document.getElementById('next-testimonial');
+        const indicators = document.querySelectorAll('.testimonial-indicator');
+        let currentIndex = 0;
+        const totalSlides = 3;
+
+        function updateSlider(index) {
+            testimonialTrack.style.transform = `translateX(-${index * 100}%)`;
+            indicators.forEach((indicator, i) => {
+                if (i === index) {
+                    indicator.classList.remove('bg-border');
+                    indicator.classList.add('bg-primary');
+                } else {
+                    indicator.classList.remove('bg-primary');
+                    indicator.classList.add('bg-border');
+                }
             });
+            currentIndex = index;
+        }
 
-            mobileAboutBtn.addEventListener('click', () => {
-                mobileAboutMenu.classList.toggle('hidden');
-                const icon = mobileAboutBtn.querySelector('i');
-                icon.classList.toggle('fa-chevron-down');
-                icon.classList.toggle('fa-chevron-up');
+        prevBtn.addEventListener('click', () => {
+            const newIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
+            updateSlider(newIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const newIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
+            updateSlider(newIndex);
+        });
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                updateSlider(index);
             });
+        });
 
-            // Testimonial Slider
-            const testimonialTrack = document.getElementById('testimonial-track');
-            const prevBtn = document.getElementById('prev-testimonial');
-            const nextBtn = document.getElementById('next-testimonial');
-            const indicators = document.querySelectorAll('.testimonial-indicator');
-            let currentIndex = 0;
-            const totalSlides = 3;
+        // Auto-play testimonials
+        setInterval(() => {
+            const newIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
+            updateSlider(newIndex);
+        }, 5000);
 
-            function updateSlider(index) {
-                testimonialTrack.style.transform = `translateX(-${index * 100}%)`;
-                indicators.forEach((indicator, i) => {
-                    if (i === index) {
-                        indicator.classList.remove('bg-border');
-                        indicator.classList.add('bg-primary');
-                    } else {
-                        indicator.classList.remove('bg-primary');
-                        indicator.classList.add('bg-border');
-                    }
-                });
-                currentIndex = index;
-            }
+        // News Ticker Animation
+        const tickerContent = document.querySelector('.ticker-content');
+        if (tickerContent) {
+            const tickerWidth = tickerContent.scrollWidth;
+            tickerContent.style.animation = `scroll ${tickerWidth / 50}s linear infinite`;
+        }
 
-            prevBtn.addEventListener('click', () => {
-                const newIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
-                updateSlider(newIndex);
-            });
-
-            nextBtn.addEventListener('click', () => {
-                const newIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
-                updateSlider(newIndex);
-            });
-
-            indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', () => {
-                    updateSlider(index);
-                });
-            });
-
-            // Auto-play testimonials
-            setInterval(() => {
-                const newIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
-                updateSlider(newIndex);
-            }, 5000);
-
-            // News Ticker Animation
-            const tickerContent = document.querySelector('.ticker-content');
-            if (tickerContent) {
-                const tickerWidth = tickerContent.scrollWidth;
-                tickerContent.style.animation = `scroll ${tickerWidth / 50}s linear infinite`;
-            }
-
-            // Add scroll animation
-            const style = document.createElement('style');
-            style.textContent = `
+        // Add scroll animation
+        const style = document.createElement('style');
+        style.textContent = `
                 @keyframes scroll {
                     0% { transform: translateX(0); }
                     100% { transform: translateX(-50%); }
                 }
             `;
-            document.head.appendChild(style);
+        document.head.appendChild(style);
 
-            // Duplicate ticker content for seamless loop
-            if (tickerContent) {
-                tickerContent.innerHTML += tickerContent.innerHTML;
-            }
+        // Duplicate ticker content for seamless loop
+        if (tickerContent) {
+            tickerContent.innerHTML += tickerContent.innerHTML;
+        }
     </script>
     <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
 
@@ -432,13 +436,13 @@
 
     <script>
         function infoAlert() {
-                Swal.fire({
-                    icon: 'info',
-                    title: 'Info',
-                    text: 'This feature is currently under development. It will be available in an upcoming update..',
-                    confirmButtonText: 'OK'
-                });
-            }
+            Swal.fire({
+                icon: 'info',
+                title: 'Info',
+                text: 'This feature is currently under development. It will be available in an upcoming update..',
+                confirmButtonText: 'OK'
+            });
+        }
     </script>
 
 </body>
