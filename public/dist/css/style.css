@@ -23469,7 +23469,7 @@ File: css
   }
 }
 /*
-    Common 
+    Common
 */
 .wizard > .actions {
   position: relative;
@@ -30238,4 +30238,10 @@ ul {
 
 .title-part-padding {
   padding: 15px 30px;
+}
+
+@media (max-width: 1023px) {
+    .hero-image {
+        display: none;
+    }
 }

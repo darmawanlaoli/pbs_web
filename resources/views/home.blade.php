@@ -30,23 +30,54 @@
     </div>
 </div>
 
+<style>
+    @media (max-width: 1023px) {
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero-content img {
+            justify-content: center;
+        }
+
+        .hero-content button {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 30%;
+        }
+
+        .center-container {
+            justify-content: center;
+        }
+
+        .hero-image {
+            display: none;
+        }
+
+        .from-primary {
+            background: linear-gradient(to right, rgba(0, 123, 255, 0.9), rgba(0, 123, 255, 0.7));
+        }
+    }
+</style>
+
 <!-- Hero Section -->
 <section class="relative h-screen min-h-[600px] flex items-center overflow-hidden">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
-        <img src="{{ asset('images/hero/hero-bg-1.webp') }}"
+        <img class="hero-image" src="{{ asset('images/hero/hero-bg-1.webp') }}"
             alt="Siswa-siswa EduVision Academy sedang belajar dengan antusias di ruang kelas modern yang dilengkapi teknologi pembelajaran interaktif"
             class="w-full h-full object-cover"
             onerror="this.src='https://img.rocket.new/generatedImages/rocket_gen_img_1633e6517-1765115190697.png'; this.onerror=null;">
-        <div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent"></div>
+        <div class="from-primary absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent"></div>
     </div>
 
     <!-- Hero Content -->
-    <div class="container-custom relative z-10">
+    <div class="hero-content container-custom relative z-10">
 
         <div class="row">
             <div class="col-7">
-                <div class="inline-block mb-6" style="display: flex">
+                <div class="center-container inline-block mb-6" style="display: flex;">
                     <div style="padding-right: 20px">
                         <img width="70px" src="{{ asset('images/logo_ipc.webp') }}" alt="">
                     </div>
@@ -56,9 +87,6 @@
                     <div>
                         <img width="280px" src="{{ asset('images/ban_sm.webp') }}" alt="">
                     </div>
-                    {{-- <span class="bg-accent text-white px-4 py-2 rounded-full text-sm font-semibold">
-                        <i class="fas fa-star mr-2"></i>Accredited A from BAN-SM
-                    </span> --}}
                 </div>
                 <h1 class="text-white mb-6 font-headline leading-tight">
                     What Makes Us Different?
@@ -69,7 +97,7 @@
                     global awareness, and
                     lifelong learning skills.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4">
+                <div class="center-container flex flex-col sm:flex-row gap-4">
                     <a href="{{ route('what_makes_us_different') }}"
                         class="btn btn-accent text-lg px-8 py-4 shadow-elevated hover:shadow-xl">
                         <span>Find Out More</span>

@@ -2,6 +2,206 @@
 
 @section('content')
 
+<style>
+    /* Base Reset */
+    :root {
+        --primary: #6c5ce7;
+        --primary-light: #a29bfe;
+        --dark: #2d3436;
+        --grey: #636e72;
+        --light-bg: #f8f9fa;
+        --purple-bg: #f3f0ff;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: var(--dark);
+        line-height: 1.8;
+        overflow-x: hidden;
+    }
+
+    .container {
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        padding: 100px 0;
+        color: white;
+        text-align: center;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* Section Layouts */
+    section {
+        padding: 80px 0;
+    }
+
+    .flex-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .col {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    /* Visual Components */
+    .section-title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin-bottom: 25px;
+        line-height: 1.2;
+    }
+
+    .section-title span {
+        color: var(--primary);
+    }
+
+    .highlight-text {
+        border-left: 5px solid var(--primary);
+        padding-left: 20px;
+        margin: 30px 0;
+        font-style: italic;
+        font-weight: 500;
+        color: var(--grey);
+    }
+
+    .img-rounded {
+        width: 100%;
+        border-radius: 30px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Cards Grid */
+    .bg-purple {
+        background-color: var(--purple-bg);
+    }
+
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .card {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon-box {
+        width: 70px;
+        height: 70px;
+        background: var(--primary);
+        color: white;
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    /* Sidebar Navigation Style Section */
+    .sticky-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 60px;
+    }
+
+    .sticky-content {
+        position: sticky;
+        top: 40px;
+        height: fit-content;
+    }
+
+    .detail-item {
+        margin-bottom: 40px;
+    }
+
+    .detail-item h4 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Footer Callout */
+    .cta-box {
+        background: var(--dark);
+        color: white;
+        padding: 80px 40px;
+        border-radius: 40px;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .tombol {
+        display: inline-block;
+        background: var(--primary);
+        color: white;
+        padding: 18px 45px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        margin-top: 30px;
+        transition: 0.3s;
+    }
+
+    .tombol:hover {
+        background: white;
+        color: var(--primary);
+    }
+
+    /* Mobile Adjustments */
+    @media (max-width: 850px) {
+        .sticky-wrapper {
+            grid-template-columns: 1fr;
+        }
+
+        .sticky-content {
+            position: static;
+        }
+    }
+</style>
 
 <!-- Hero Section -->
 <section class="relative h-[60vh] min-h-[500px] flex items-center overflow-hidden">
@@ -25,8 +225,9 @@
                 What Makes Us Different
             </h1>
             <p class="text-white/90 text-xl md:text-2xl mb-8 leading-relaxed">
-                Memberdayakan potensi setiap siswa melalui pendidikan inovatif yang memadukan keunggulan akademik
-                tradisional dengan metodologi pembelajaran modern.
+                Intellectual capital is the driving force of the 21st century. We don't just teach; we prepare future
+                generations for a
+                world that's constantly evolving.
             </p>
         </div>
     </div>
@@ -38,180 +239,100 @@
 </section>
 
 
-<!-- Why Choose Us Section -->
-<section class="section bg-gradient-to-br from-primary to-primary-900 text-white relative overflow-hidden">
-    <!-- Decorative Elements -->
-    <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+<section>
 
-    <div class="container-custom relative z-10">
-
-        <!-- Flagship 1 -->
-        <div class="w-full flex-shrink-0 px-4">
-            <div class="card p-8 md:p-12">
-                <div class="flex flex-col md:flex-row items-center gap-8">
-                    <div class="flex-shrink-0">
-                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1983baef3-1765185677980.png"
-                            alt="Foto Bapak Ahmad Hidayat, orang tua siswa kelas 8 SMP yang memberikan testimoni positif tentang program STEM di EduVision Academy"
-                            class="w-32 h-32 rounded-full object-cover border-4 border-primary-100"
-                            onerror="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=2'; this.onerror=null;">
+    <section>
+        <div class="container">
+            <div class="flex-row">
+                <div class="col">
+                    <h2 class="section-title">The Urgency of <span>Intellectual Potential</span></h2>
+                    <p>Political, social and economic progress in this millennium will depend on the intellectual
+                        potential
+                        of future generations. The necessity to refresh skills should come as no surprise.</p>
+                    <div class="highlight-text">
+                        "The ability of students to implement their skills in the digital age will determine whether
+                        they
+                        are ready to live, study, work and serve society."
                     </div>
-                    <div class="flex-1 text-center md:text-left">
-                        <p class="mt-2 text-lg text-text-secondary mb-6 leading-relaxed">
-                            Intellectual capital is the driving force of the 21st century. Political, social and
-                            economic progress in this
-                            millennium will depend on the intellectual potential of future generations of young people.
-                            The skills students are
-                            being taught, the manner in which they are taught and the necessity to refresh their skills
-                            should, thus, come as no
-                            surprise. The urgency for workers to expand their skill sets in order to meet the
-                            requirements of the 21st century is
-                            apparent, given the number of reports from various sources calling for immediate action.
-                        </p>
+                    <p>We serve as a bridge between the public, business and educational sector, helping students
+                        properly
+                        prepare themselves.</p>
+                </div>
+                <div class="col">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800"
+                        alt="Education" class="img-rounded">
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="bg-purple">
+        <div class="container">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <h2 class="section-title">A New Kind of Literacy</h2>
+                <p>Being literate in the 21st century means having excellent academic skills, thinking critically, and
+                    mastering technology.</p>
+            </div>
 
-                        <p class="mt-2 text-lg text-text-secondary mb-6 leading-relaxed">
-                            By illustrating common definitions and scenarios in relation to the skills students and
-                            workers workers need to possess
-                            in the emerging digital age, the list serves as a bridge between the public, business and
-                            educational sector. In order
-                            to prepare themselves properly, students should acquire their skills and competences within
-                            the framework of
-                            contemporary skills. The ability of students to implement their skills in the digital age as
-                            well as objective skill
-                            assessments will determine whether the children of today are ready to live, study, work and
-                            serve society in a digital
-                            environment.
-                        </p>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="icon-box mx-auto"><i class="bi bi-book"></i></div>
+                    <h4>Holistic Approach</h4>
+                    <p>Combining learning objectives with innovative systems for multidimensional skills.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-box mx-auto"><i class="bi bi-cpu"></i></div>
+                    <h4>Digital Era</h4>
+                    <p>Students must acquire skills of the digital age to progress in a digital economy.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-box mx-auto"><i class="bi bi-people"></i></div>
+                    <h4>Global Standards</h4>
+                    <p>Implementing 21st-century skills into academic standards and school programmes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-                        <p class="mt-2 text-lg text-text-secondary mb-6 leading-relaxed">
-                            The current and the future state of global economy as well as that of individual nations
-                            depends on the level of
-                            proficiency young people attain in this new kind of literacy – the literacy of the 21st
-                            century. Being literate in the
-                            21st century means that you have excellent academic skills, that you can think about and
-                            comprehend content, that you
-                            can work in a team and that you know how to use technology.
-                        </p>
-
-
-                        <p class="mt-2 text-lg text-text-secondary mb-6 leading-relaxed">
-                            In order to progress in a digital economy, students will have to acquire the skills of the
-                            digital age. The educational
-                            system should keep up with these changes in order to successfully prepare its students for
-                            the world outside the
-                            classroom. The educational system should understand and accept the 21st-century skills into
-                            its academic standards. In
-                            other words, schools should implement the aforementioned skills into their programmes.
-                        </p>
-
-
-                        <p class="mt-2 text-lg text-text-secondary mb-6 leading-relaxed">
-                            The framework for education in the 21st century demonstrates a holistic approach to
-                            teaching, which combines the
-                            discrete focus on learning objectives (a set of specific skills, substantial knowledge,
-                            competence and literacy) with
-                            innovative systems which enable students to master multidimensional 21st century skills.
-
-                            These are what many people believe to be the most important skills when it comes to being
-                            successful in the 21st
-                            century.
-                        </p>
-
-                        <h4 class="font-headline font-bold text-xl text-primary">Literacy in the Digital Age – The Basic
-                            Requirements of Today</h4>
-
-                        <p class="mt-2 text-lg text-text-secondary mb-6 leading-relaxed">
-                            As society changes, the skills needed to perform complex functions also change. In the early
-                            years of the 20th century,
-                            people who knew how to read, write and do basic maths were considered to be literate. Only
-                            in recent years has the
-                            educational system come to expect students to be able to read critically, write
-                            convincingly, think logically and solve
-                            complex mathematical and scientific problems. Students are expected to master computer and
-                            media literacy. They have to
-                            know how to analyse, access, manage, integrate, evaluate and create information in various
-                            media.
-                        </p>
-
-
-                        <h4 class="font-headline font-bold text-xl text-primary">Visual and Information Literacy</h4>
-
-
-                        <p class="mt-2 text-lg text-text-secondary mb-6 leading-relaxed">
-                            The increased use of graphic tools has resulted from the fact that the Internet uses a
-                            graphic interface and that audio,
-                            video and data have been transferred into the digital format. Digital cameras, graphics,
-                            videos, photo standards and
-                            other such advanced technologies enable users to convey their ideas through images. Students
-                            need good visualisation
-                            skills in order to interpret images, spot patterns and communicate via images. Information
-                            literacy refers to the
-                            effective and efficient access to information, the evaluation of information in critical
-                            manner and the use of
-                            information in an accurate and creative fashion.
-                        </p>
-
-
-                        <h4 class="font-headline font-bold text-xl text-primary">Cultural Literacy and Global Awareness
-                        </h4>
-
-                        <p class="mt-2 text-lg text-text-secondary mb-6 leading-relaxed">
-                            The world has been networking at great speed and trade globalisation has increased the need
-                            for cultural literacy. In a
-                            global economy, where interaction, partnership and global competition are highly regarded,
-                            there is a greater need for
-                            knowledge, understanding and respect among cultures, including the cultures which have been
-                            established as norms in the
-                            tech world, e.g. virtual reality
-                        </p>
-
-
-                        <h3 class="font-headline font-bold text-xl text-primary">Creative Thinking – Intellectual
-                            Capital
-                        </h3>
-
-                        <h4 class="font-headline font-bold text-xl text-primary">Adaptability/managing complexity and
-                            self-direction
-                        </h4>
-
-
-                        <p class="mt-2 text-lg text-text-secondary mb-6 leading-relaxed">
-                            The interconnectivity of today’s world has brought about an unprecedented complexity.
-                            Globalisation and the Internet are
-                            very complex and they accelerate the changes in the world. In such an environment,
-                            individuals are required to
-                            independently identify change and react to it – self-actualised students will learn how to
-                            analyse and identify new
-                            conditions, as well as the skills necessary for managing them. They must be able to consider
-                            alternative plans,
-                            anticipate change and understand the way elements within the system are connected
-                        </p>
-
-                        <h4 class="font-headline font-bold text-xl text-primary">Curiosity, Creativity and Risk
-                        </h4>
-
-                        <p class="mt-2 text-lg text-text-secondary mb-6 leading-relaxed">
-                            Future professionals are expected to adapt to an ever-changing environment. This life-long
-                            learning process requires one
-                            to be curious about the world and the way it works. Researches have now discovered that
-                            intellectual efforts can change
-                            a person’s brain structure. They discovered a correlation between the amount of experience a
-                            person gathers in complex
-                            environments and the changes to his brain structure. Curiosity enables lifelong learning, as
-                            it contributes to the
-                            quality of life and the intellectual capital of a nation. It is also important to take risks
-                            – without this, there would
-                            be fewer discoveries and inventions and learning would rarely take place.
-                        </p>
-
+    <section>
+        <div class="container">
+            <div class="sticky-wrapper">
+                <div class="sticky-content">
+                    <h2 class="section-title">Literacy in the <br><span>Digital Age</span></h2>
+                    <p>As society changes, the skills needed to perform complex functions also change. We expect
+                        students to
+                        read critically and write convincingly.</p>
+                </div>
+                <div>
+                    <div class="detail-item">
+                        <h4>Visual & Information</h4>
+                        <p>Students need good visualisation skills to interpret images and spot patterns. Information
+                            literacy refers to efficient access and critical evaluation of information.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Cultural Awareness</h4>
+                        <p>In a global economy, there is a greater need for knowledge, understanding, and respect among
+                            cultures, including tech-world norms.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Creative Thinking</h4>
+                        <p>Individuals are required to independently identify change and react to it. Self-actualised
+                            students learn how to analyse and identify new conditions.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <section class="container">
+        <div class="cta-box">
+            <h2>Curiosity, Creativity and Risk</h2>
+            <p style="margin-top: 20px; opacity: 0.8;">Curiosity enables lifelong learning. It is also important to take
+                risks – without this, there would be fewer discoveries and inventions.</p>
+            <a href="{{ route('flagship_program') }}" class="tombol">Explore Our Programs</a>
+        </div>
+    </section>
+
+</section>
 
 @endsection
