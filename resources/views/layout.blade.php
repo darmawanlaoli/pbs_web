@@ -18,7 +18,7 @@
         src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Feduvision7008back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.10">
     </script>
     <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
-    <link rel="icon" type="image/x-icon" href="{{ assets('images/logo.webp') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.webp') }}">
 
 </head>
 
@@ -177,32 +177,59 @@
                         </div>
                     </div>
 
+
                     <div>
-                        <button id="mobile-about-btn"
+                        <button id="mobile-academics-btn"
                             class="w-full flex items-center justify-between px-4 py-3 text-text-primary hover:bg-surface rounded-lg transition-smooth">
                             <span>Academics</span>
                             <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
                         </button>
-                        <div id="mobile-about-menu" class="hidden pl-4 space-y-1 mt-1">
-                            <a href="about_us.html#philosophy"
-                                class="block px-4 py-2 text-sm text-text-secondary hover:text-primary">Preschool &
-                                Kindergarten</a>
-                            <a href="about_us.html#leadership"
+                        <div id="mobile-academics-menu" class="hidden pl-4 space-y-1 mt-1">
+                            <a href="{{ route('academic/kindergarten') }}"
+                                class="block px-4 py-2 text-sm text-text-secondary hover:text-primary">
+                                Preschool & Kindergarten</a>
+                            <a href="{{ route('academic/primary_school') }}"
                                 class="block px-4 py-2 text-sm text-text-secondary hover:text-primary">Primary
                                 School</a>
-                            <a href="about_us.html#facilities"
+                            <a href="{{ route('academic/high_school') }}"
                                 class="block px-4 py-2 text-sm text-text-secondary hover:text-primary">High School</a>
                         </div>
                     </div>
 
-                    <a href="admissions.html"
-                        class="block px-4 py-3 text-text-primary hover:bg-surface rounded-lg transition-smooth">Penerimaan</a>
-                    <a href="parent_testimonials.html"
-                        class="block px-4 py-3 text-text-primary hover:bg-surface rounded-lg transition-smooth">Testimoni</a>
-                    <a href="contact.html"
-                        class="block px-4 py-3 text-text-primary hover:bg-surface rounded-lg transition-smooth">Kontak</a>
-                    <a href="javascript:void(0)"
-                        class="block px-4 py-3 text-white bg-primary rounded-lg text-center font-semibold">
+
+                    <div>
+                        <button id="mobile-media-btn"
+                            class="w-full flex items-center justify-between px-4 py-3 text-text-primary hover:bg-surface rounded-lg transition-smooth">
+                            <span>Media</span>
+                            <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div id="mobile-media-menu" class="hidden pl-4 space-y-1 mt-1">
+                            <a href="{{ route('photo_gallery') }}"
+                                class="block px-4 py-2 text-sm text-text-secondary hover:text-primary">
+                                Photo Gallery</a>
+                            <a href="https://www.youtube.com/OfficialPeachblossomsSchool"
+                                class="block px-4 py-2 text-sm text-text-secondary hover:text-primary">YouTube
+                                Channel</a>
+                            <a href="https://www.instagram.com/peachblossoms_school/"
+                                class="block px-4 py-2 text-sm text-text-secondary hover:text-primary">Instagram</a>
+
+                            <a href="https://www.tiktok.com/@peachblossomsschool"
+                                class="block px-4 py-2 text-sm text-text-secondary hover:text-primary">TikTok</a>
+
+                            <a href="{{ route('articles') }}"
+                                class="block px-4 py-2 text-sm text-text-secondary hover:text-primary">News and
+                                Articles</a>
+                        </div>
+                    </div>
+
+                    <a href="{{ route('flagship_program') }}"
+                        class="block px-4 py-3 text-text-primary hover:bg-surface rounded-lg transition-smooth">Flagship
+                        Programs</a>
+
+
+                    <!-- Parent Portal Button -->
+                    <a href="{{ route('contact_us') }}"
+                        class="block mx-4 px-4 py-3 text-center bg-primary text-white rounded-lg hover:bg-primary-800 transition-smooth">
                         <i class="fas fa-user-circle mr-2"></i>Contact Us
                     </a>
                 </div>
@@ -347,8 +374,15 @@
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+
         const mobileAboutBtn = document.getElementById('mobile-about-btn');
         const mobileAboutMenu = document.getElementById('mobile-about-menu');
+
+        const mobileAcademicsBtn = document.getElementById('mobile-academics-btn');
+        const mobileAcademicsMenu = document.getElementById('mobile-academics-menu');
+
+        const mobileMediaBtn = document.getElementById('mobile-media-btn');
+        const mobileMediaMenu = document.getElementById('mobile-media-menu');
 
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
@@ -360,6 +394,20 @@
         mobileAboutBtn.addEventListener('click', () => {
             mobileAboutMenu.classList.toggle('hidden');
             const icon = mobileAboutBtn.querySelector('i');
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+        });
+
+        mobileAcademicsBtn.addEventListener('click', () => {
+            mobileAcademicsMenu.classList.toggle('hidden');
+            const icon = mobileAcademicsBtn.querySelector('i');
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+        });
+
+        mobileMediaBtn.addEventListener('click', () => {
+            mobileMediaMenu.classList.toggle('hidden');
+            const icon = mobileMediaBtn.querySelector('i');
             icon.classList.toggle('fa-chevron-down');
             icon.classList.toggle('fa-chevron-up');
         });
