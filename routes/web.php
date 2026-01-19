@@ -53,4 +53,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/admin/image/store', [ImageGallery::class, 'store'])->name('admin.image.store');
     Route::delete('/admin/image/{gallery}', [ImageGallery::class, 'destroy'])->name('admin.image.destroy');
     Route::get('/admin/image/edit', [ImageGallery::class, 'edit'])->name('admin.image.edit');
+
+    Route::get('/admin/articles', [Dashboard::class, 'index'])->name('admin.articles');
 });

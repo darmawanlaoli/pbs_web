@@ -18,7 +18,7 @@
         src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Feduvision7008back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.10">
     </script>
     <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
-    <link rel="icon" type="image/x-icon" href="{{ assets('images/logo.webp') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.webp') }}">
 
 </head>
 
@@ -439,7 +439,7 @@
             Swal.fire({
                 icon: 'info',
                 title: 'Info',
-                text: 'This feature is currently under development. It will be available in an upcoming update..',
+                text: 'This feature is currently under development. It will be available in an upcoming update...',
                 confirmButtonText: 'OK'
             });
         }

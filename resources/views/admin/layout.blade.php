@@ -94,6 +94,16 @@
                             </ul>
                         </li>
 
+                        <li class="sidebar-item">
+                            <a class="sidebar-link sidebar-link" href="{{ route('admin.articles') }}"
+                                aria-expanded="false">
+                                <span class="rounded-3">
+                                    <i class="ti ti-home"></i>
+                                </span>
+                                <span class="hide-menu">News and Articles</span>
+                            </a>
+                        </li>
+
                     </ul>
 
                 </nav>
@@ -108,7 +118,8 @@
                             <span class="fs-2 text-dark">Designer</span>
                         </div>
                         <button class="border-0 bg-transparent text-primary ms-auto" tabindex="0" type="button"
-                            aria-label="logout" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="logout">
+                            aria-label="logout" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-title="logout">
                             <i class="ti ti-power fs-6"></i>
                         </button>
                     </div>
@@ -143,8 +154,10 @@
                         </li>
                     </ul>
                     <div class="d-block d-lg-none">
-                        <img src="../../dist/images/logos/dark-logo.svg" class="dark-logo" width="180" alt="" />
-                        <img src="../../dist/images/logos/light-logo.svg" class="light-logo" width="180" alt="" />
+                        <img src="../../dist/images/logos/dark-logo.svg" class="dark-logo" width="180"
+                            alt="" />
+                        <img src="../../dist/images/logos/light-logo.svg" class="light-logo" width="180"
+                            alt="" />
                     </div>
                     <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -275,30 +288,32 @@
                                                     class="py-8 px-7 mt-8 d-flex align-items-center">
                                                     <span
                                                         class="d-flex align-items-center justify-content-center bg-light rounded-1 p-6">
-                                                        <img src="../../dist/images/svgs/icon-account.svg" alt=""
-                                                            width="24" height="24">
+                                                        <img src="../../dist/images/svgs/icon-account.svg"
+                                                            alt="" width="24" height="24">
                                                     </span>
                                                     <div class="w-75 d-inline-block v-middle ps-3">
                                                         <h6 class="mb-1 bg-hover-primary fw-semibold"> My Profile </h6>
                                                         <span class="d-block text-dark">Account Settings</span>
                                                     </div>
                                                 </a>
-                                                <a href="./app-email.html" class="py-8 px-7 d-flex align-items-center">
+                                                <a href="./app-email.html"
+                                                    class="py-8 px-7 d-flex align-items-center">
                                                     <span
                                                         class="d-flex align-items-center justify-content-center bg-light rounded-1 p-6">
-                                                        <img src="../../dist/images/svgs/icon-inbox.svg" alt=""
-                                                            width="24" height="24">
+                                                        <img src="../../dist/images/svgs/icon-inbox.svg"
+                                                            alt="" width="24" height="24">
                                                     </span>
                                                     <div class="w-75 d-inline-block v-middle ps-3">
                                                         <h6 class="mb-1 bg-hover-primary fw-semibold">My Inbox</h6>
                                                         <span class="d-block text-dark">Messages & Emails</span>
                                                     </div>
                                                 </a>
-                                                <a href="./app-notes.html" class="py-8 px-7 d-flex align-items-center">
+                                                <a href="./app-notes.html"
+                                                    class="py-8 px-7 d-flex align-items-center">
                                                     <span
                                                         class="d-flex align-items-center justify-content-center bg-light rounded-1 p-6">
-                                                        <img src="../../dist/images/svgs/icon-tasks.svg" alt=""
-                                                            width="24" height="24">
+                                                        <img src="../../dist/images/svgs/icon-tasks.svg"
+                                                            alt="" width="24" height="24">
                                                     </span>
                                                     <div class="w-75 d-inline-block v-middle ps-3">
                                                         <h6 class="mb-1 bg-hover-primary fw-semibold">My Task</h6>
@@ -461,8 +476,8 @@
                                 <a href="#" class="d-flex align-items-center">
                                     <div
                                         class="bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                        <img src="../../dist/images/svgs/icon-dd-chat.svg" alt="" class="img-fluid"
-                                            width="24" height="24">
+                                        <img src="../../dist/images/svgs/icon-dd-chat.svg" alt=""
+                                            class="img-fluid" width="24" height="24">
                                     </div>
                                     <div class="d-inline-block">
                                         <h6 class="mb-1 bg-hover-primary">Chat Application</h6>
@@ -474,8 +489,8 @@
                                 <a href="#" class="d-flex align-items-center">
                                     <div
                                         class="bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                        <img src="../../dist/images/svgs/icon-dd-invoice.svg" alt="" class="img-fluid"
-                                            width="24" height="24">
+                                        <img src="../../dist/images/svgs/icon-dd-invoice.svg" alt=""
+                                            class="img-fluid" width="24" height="24">
                                     </div>
                                     <div class="d-inline-block">
                                         <h6 class="mb-1 bg-hover-primary">Invoice App</h6>
@@ -487,8 +502,8 @@
                                 <a href="#" class="d-flex align-items-center">
                                     <div
                                         class="bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                        <img src="../../dist/images/svgs/icon-dd-mobile.svg" alt="" class="img-fluid"
-                                            width="24" height="24">
+                                        <img src="../../dist/images/svgs/icon-dd-mobile.svg" alt=""
+                                            class="img-fluid" width="24" height="24">
                                     </div>
                                     <div class="d-inline-block">
                                         <h6 class="mb-1 bg-hover-primary">Contact Application</h6>
@@ -513,8 +528,8 @@
                                 <a href="#" class="d-flex align-items-center">
                                     <div
                                         class="bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                        <img src="../../dist/images/svgs/icon-dd-cart.svg" alt="" class="img-fluid"
-                                            width="24" height="24">
+                                        <img src="../../dist/images/svgs/icon-dd-cart.svg" alt=""
+                                            class="img-fluid" width="24" height="24">
                                     </div>
                                     <div class="d-inline-block">
                                         <h6 class="mb-1 bg-hover-primary">User Profile</h6>
@@ -526,8 +541,8 @@
                                 <a href="#" class="d-flex align-items-center">
                                     <div
                                         class="bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                        <img src="../../dist/images/svgs/icon-dd-date.svg" alt="" class="img-fluid"
-                                            width="24" height="24">
+                                        <img src="../../dist/images/svgs/icon-dd-date.svg" alt=""
+                                            class="img-fluid" width="24" height="24">
                                     </div>
                                     <div class="d-inline-block">
                                         <h6 class="mb-1 bg-hover-primary">Calendar App</h6>
@@ -539,8 +554,8 @@
                                 <a href="#" class="d-flex align-items-center">
                                     <div
                                         class="bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                        <img src="../../dist/images/svgs/icon-dd-lifebuoy.svg" alt="" class="img-fluid"
-                                            width="24" height="24">
+                                        <img src="../../dist/images/svgs/icon-dd-lifebuoy.svg" alt=""
+                                            class="img-fluid" width="24" height="24">
                                     </div>
                                     <div class="d-inline-block">
                                         <h6 class="mb-1 bg-hover-primary">Contact List Table</h6>
@@ -629,7 +644,8 @@
             <ul>
                 <li class="pb-4 border-bottom">
                     <div class="d-flex align-items-center py-2">
-                        <img src="../../dist/images/products/product-1.jpg" width="98" class="rounded-2 me-3" alt="" />
+                        <img src="../../dist/images/products/product-1.jpg" width="98" class="rounded-2 me-3"
+                            alt="" />
                         <div>
                             <h6 class="fs-4 fw-normal mb-0">Supreme toys cooker</h6>
                             <p class="mb-0 text-muted fs-3">Kitchenware Item</p>
@@ -651,7 +667,8 @@
                 </li>
                 <li class="py-4 border-bottom">
                     <div class="d-flex align-items-center py-2">
-                        <img src="../../dist/images/products/product-2.jpg" width="98" class="rounded-2 me-3" alt="" />
+                        <img src="../../dist/images/products/product-2.jpg" width="98" class="rounded-2 me-3"
+                            alt="" />
                         <div>
                             <h6 class="fs-4 fw-normal mb-0">Supreme toys cooker</h6>
                             <p class="mb-0 text-muted fs-3">Kitchenware Item</p>
@@ -673,7 +690,8 @@
                 </li>
                 <li class="py-4 border-bottom">
                     <div class="d-flex align-items-center py-2">
-                        <img src="../../dist/images/products/product-3.jpg" width="98" class="rounded-2 me-3" alt="" />
+                        <img src="../../dist/images/products/product-3.jpg" width="98" class="rounded-2 me-3"
+                            alt="" />
                         <div>
                             <h6 class="fs-4 fw-normal mb-0">Supreme toys cooker</h6>
                             <p class="mb-0 text-muted fs-3">Kitchenware Item</p>
@@ -805,8 +823,10 @@
     </div>
     <!-- Customizer -->
     <button class="btn btn-primary p-3 rounded-circle d-flex align-items-center justify-content-center customizer-btn"
-        type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-        <i class="ti ti-settings fs-7" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Settings"></i>
+        type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample">
+        <i class="ti ti-settings fs-7" data-bs-toggle="tooltip" data-bs-placement="top"
+            data-bs-title="Settings"></i>
     </button>
     <div class="offcanvas offcanvas-end customizer" tabindex="-1" id="offcanvasExample"
         aria-labelledby="offcanvasExampleLabel" data-simplebar="">

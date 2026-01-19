@@ -206,8 +206,7 @@
     <section class="relative h-[60vh] min-h-[500px] flex items-center overflow-hidden">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
-            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1633e6517-1765115190697.png"
-                alt="Gedung utama EduVision Academy dengan arsitektur modern yang mencerminkan inovasi pendidikan dan lingkungan belajar yang inspiratif"
+            <img src="{{ asset('images/articles/peachblossoms_school_lab.webp') }}" alt="Lab Biologi Peachblososms School"
                 class="w-full h-full object-cover"
                 onerror="this.src='https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;">
             <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60"></div>
