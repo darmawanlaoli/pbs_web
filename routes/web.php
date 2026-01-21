@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\ImageGallery;
+use App\Http\Controllers\ArticleController as AdminArticleController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -31,7 +32,7 @@ Route::get('/photo_gallery', [HomeController::class, 'photoGallery'])->name('pho
 Route::get('/news_events', [HomeController::class, 'newsEvents'])->name(' news_events');
 Route::get('/news_events/{id}', [HomeController::class, 'newsEventDetail'])->name('news_event_detail');
 Route::get('/articles', [HomeController::class, 'articles'])->name('articles');
-Route::get('/articles/{id}', [HomeController::class, 'articleDetail'])->name('article_detail');
+Route::get('/articles/{id}', [HomeController::class, 'articleDetail'])->name('articles.show');
 Route::get('/what_makes_us_different', [HomeController::class, 'whatMakesUsDifferent'])->name('what_makes_us_different');
 
 
@@ -54,5 +55,12 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/admin/image/{gallery}', [ImageGallery::class, 'destroy'])->name('admin.image.destroy');
     Route::get('/admin/image/edit', [ImageGallery::class, 'edit'])->name('admin.image.edit');
 
-    Route::get('/admin/articles', [Dashboard::class, 'index'])->name('admin.articles');
+    Route::get('/admin/articles', [AdminArticleController::class, 'index'])->name('admin.articles');
+    Route::get('/admin/articles/create', [AdminArticleController::class, 'create'])->name('admin.articles.create');
+    Route::post('/admin/articles/store', [AdminArticleController::class, 'store'])->name('admin.articles.store');
+    Route::delete('/admin/articles/{article}', [AdminArticleController::class, 'destroy'])->name('admin.articles.destroy');
+    Route::get('/admin/articles/edit', [AdminArticleController::class, 'edit'])->name('admin.articles.edit');
+    Route::put('/admin/articles/{article}', [AdminArticleController::class, 'update'])->name('admin.articles.update');
+    Route::get('/admin/articles/{article}', [AdminArticleController::class, 'show'])->name('admin.articles.show');
+    Route::get('/admin/articles/{article}/comments', [AdminArticleController::class, 'comments'])->name('admin.articles.comments');
 });

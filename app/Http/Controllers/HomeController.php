@@ -106,13 +106,19 @@ class HomeController extends Controller
     public function articles()
     {
         $title = "Articles";
-        return view('media.articles', compact('title'));
+        $articles = \App\Models\Article::orderBy('id', 'DESC')->get();
+        return view('media.articles', compact('title', 'articles'));
     }
 
-    public function articleDetail($id)
+    public function articleDetail($slug)
     {
         $title = "Article Detail";
-        return view('media.article_detail', compact('title', 'id'));
+        $article = \App\Models\Article::where('slug', $slug)->firstOrFail();
+        $recommendations = \App\Models\Article::where('id', '!=', $article->id)
+            ->inRandomOrder()
+            ->take(3)
+            ->get();
+        return view('media.article_detail', compact('title', 'article', 'recommendations'));
     }
 
     public function whatMakesUsDifferent()
