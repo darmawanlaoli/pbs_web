@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\ImageGallery;
+use App\Http\Controllers\MessageController as AdminMessageController;
 use App\Http\Controllers\ArticleController as AdminArticleController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -37,15 +38,11 @@ Route::get('/what_makes_us_different', [HomeController::class, 'whatMakesUsDiffe
 
 
 // Routes admin
-
 Route::get('/admin/login', [LoginController::class, 'index'])->name('admin.login');
 
 Route::post('/admin/login', [LoginController::class, 'login']);
 
 Route::post('/admin/logout', [LoginController::class, 'logout'])->name('admin.logout');
-
-
-
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [Dashboard::class, 'index'])->name('admin.dashboard');
@@ -63,4 +60,6 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/admin/articles/{article}', [AdminArticleController::class, 'update'])->name('admin.articles.update');
     Route::get('/admin/articles/{article}', [AdminArticleController::class, 'show'])->name('admin.articles.show');
     Route::get('/admin/articles/{article}/comments', [AdminArticleController::class, 'comments'])->name('admin.articles.comments');
+
+    Route::get('/admin/message', [AdminMessageController::class, 'index'])->name('admin.message');
 });
