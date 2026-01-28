@@ -42,7 +42,7 @@
         <a href="{{ route('articles.show', $article->slug) }}"
             class="card group overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-elevated">
             <div class="relative h-48 overflow-hidden">
-                <img src="{{ asset('storage/' . $article->image) }}" alt="{{ $article->title }}"
+                <img src="{{ asset('images/' . $article->image) }}" alt="{{ $article->title }}"
                     onerror="this.src='https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=2832&auto=format&fit=crop'; this.onerror=null;">
                 <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
                 <div class="absolute bottom-4 left-4 right-4">
