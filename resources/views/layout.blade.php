@@ -4,22 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{-- SEO Basic --}}
+    <title>@yield('title', 'Peachblossoms School Harapan Indah Bekasi')</title>
     <meta name="description"
-        content="Peachblossoms School - sekolah dengan kurikulum internasional di Harapan Indah Bekasi">
+        content="@yield('meta_description', 'Peachblossoms School - sekolah dengan kurikulum internasional di Harapan Indah Bekasi')">
     <meta name="keywords"
         content="sekolah, pendidikan, SD, SMP, SMA, peachblossoms school, sekolah terbaik, pendidikan berkualitas sekolah di harapan indah, sekolah di bekasi">
-    <title>Peachblossoms School Harapan Indah Bekasi</title>
+
+    {{-- Open Graph (WA / FB / Telegram / LinkedIn) --}}
+    <meta property="og:type" content="@yield('og_type', 'website')">
+    <meta property="og:title" content="@yield('og_title', 'Peachblossoms School Harapan Indah Bekasi')">
+    <meta property="og:description"
+        content="@yield('og_description', 'Peachblossoms School - sekolah dengan kurikulum internasional di Harapan Indah Bekasi')">
+    <meta property="og:image" content="@yield('og_image', asset('images/logo.webp'))">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:site_name" content="Peachblossoms School">
+
+    {{-- Twitter Card --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('og_title', 'Peachblossoms School Harapan Indah Bekasi')">
+    <meta name="twitter:description"
+        content="@yield('og_description', 'Peachblossoms School - sekolah dengan kurikulum internasional di Harapan Indah Bekasi')">
+    <meta name="twitter:image" content="@yield('og_image', asset('images/logo.webp'))">
+
+    {{-- Assets --}}
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
+    {{-- Scripts --}}
     <script type="module" async
         src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Feduvision7008back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.10">
     </script>
     <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
-    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.webp') }}">
 
+    {{-- Favicon --}}
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.webp') }}">
 </head>
 
 <body class="bg-background">

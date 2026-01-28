@@ -1,5 +1,11 @@
 @extends('layout')
 
+@section('title', $article->title)
+
+@section('og_title', $article->title)
+@section('og_description', Str::limit(strip_tags($article->content), 150))
+@section('og_image', asset('images/' . $article->image))
+
 @section('content')
 
 <div class="article-container">
@@ -24,19 +30,22 @@
 
                 @if($article->image)
                 <div class="featured-image">
-                    <img src="{{ asset('storage/' . $article->image) }}" alt="{{ $article->title }}">
+                    <img src="{{ asset('images/' . $article->image) }}" alt="{{ $article->title }}">
                 </div>
                 @endif
 
-                <div class="article-body">
+                <div class="article-body mb-5">
                     {!! $article->content !!}
                 </div>
 
                 <div class="share-section">
                     <p>Bagikan artikel ini:</p>
                     <div class="share-buttons">
-                        <a href="#" class="btn-wa">WhatsApp</a>
-                        <a href="#" class="btn-fb">Facebook</a>
+                        <a href="https://wa.me/?text={{ urlencode($article->title . ' ' . url()->current()) }}"
+                            target="_blank" class="btn-wa">
+                            <i class="bi bi-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="#" class="btn-fb"><i class="bi bi-facebook"></i> Facebook</a>
                     </div>
                 </div>
             </article>
@@ -53,7 +62,7 @@
             <div class="recommendation-list">
                 @foreach($recommendations as $rec)
                 <a href="{{ route('articles.show', $rec->slug) }}" class="rec-item">
-                    <img src="{{ asset('storage/' . $rec->image) }}" alt="">
+                    <img src="{{ asset('images/' . $rec->image) }}" alt="">
                     <div class="rec-text">
                         <h4>{{ Str::limit($rec->title, 50) }}</h4>
                         <span>{{ $rec->created_at->diffForHumans() }}</span>
