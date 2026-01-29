@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\Testimony;
 use App\Models\Message;
 use App\Models\Gallery;
+use App\Models\ArticleView;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Cache;
 
 class HomeController extends Controller
 {
@@ -110,14 +113,48 @@ class HomeController extends Controller
         return view('media.articles', compact('title', 'articles'));
     }
 
+    // public function articleDetail($slug)
+    // {
+    //     $title = "Article Detail";
+    //     $article = \App\Models\Article::where('slug', $slug)->firstOrFail();
+    //     $recommendations = \App\Models\Article::where('id', '!=', $article->id)
+    //         ->inRandomOrder()
+    //         ->take(3)
+    //         ->get();
+    //     return view('media.article_detail', compact('title', 'article', 'recommendations'));
+    // }
+
     public function articleDetail($slug)
     {
         $title = "Article Detail";
+
         $article = \App\Models\Article::where('slug', $slug)->firstOrFail();
+
+        $sessionId = session()->getId();
+        $ipAddress = request()->ip();
+
+        // Cek apakah session ini sudah pernah view artikel ini
+        $alreadyViewed = ArticleView::where('article_id', $article->id)
+            ->where('session_id', $sessionId)
+            ->exists();
+
+        if (! $alreadyViewed) {
+            DB::transaction(function () use ($article, $sessionId, $ipAddress) {
+                ArticleView::create([
+                    'article_id' => $article->id,
+                    'session_id' => $sessionId,
+                    'ip_address' => $ipAddress,
+                ]);
+
+                $article->increment('view_count');
+            });
+        }
+
         $recommendations = \App\Models\Article::where('id', '!=', $article->id)
             ->inRandomOrder()
             ->take(3)
             ->get();
+
         return view('media.article_detail', compact('title', 'article', 'recommendations'));
     }
 

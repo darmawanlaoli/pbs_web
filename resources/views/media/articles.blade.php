@@ -33,7 +33,6 @@
     </div>
 </section>
 
-
 <div class="container mx-auto px-4 py-12">
 
     <div class="grid md:grid-cols-3 gap-8">

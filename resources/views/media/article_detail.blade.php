@@ -24,7 +24,10 @@
                     </div>
                     <div class="meta-info">
                         <span class="author-name">Written by Darmawan Laoli</span>
-                        <span class="publish-date">{{ $article->created_at->format('d M Y') }}</span>
+                        <span class="publish-date">{{ $article->created_at->format('d M Y') }} | <b><i
+                                    class="bi bi-eye"></i> {{
+                                $article->view_count
+                                }} views</b></span>
                     </div>
                 </div>
 
