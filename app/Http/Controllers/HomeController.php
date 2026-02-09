@@ -7,6 +7,7 @@ use App\Models\Testimony;
 use App\Models\Message;
 use App\Models\Gallery;
 use App\Models\ArticleView;
+use App\Models\Article;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Cache;
@@ -18,8 +19,11 @@ class HomeController extends Controller
 
         $title = "Home Page";
         $testimonies = Testimony::all();
+        $articles = Article::orderBy('created_at', 'desc')
+        ->limit(5)
+        ->get();
 
-        return view('home', compact('title', 'testimonies'));
+        return view('home', compact('title', 'testimonies', 'articles'));
     }
 
     public function kindergarten()

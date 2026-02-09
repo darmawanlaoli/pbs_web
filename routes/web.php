@@ -33,7 +33,7 @@ Route::get('/photo_gallery', [HomeController::class, 'photoGallery'])->name('pho
 Route::get('/news_events', [HomeController::class, 'newsEvents'])->name(' news_events');
 Route::get('/news_events/{id}', [HomeController::class, 'newsEventDetail'])->name('news_event_detail');
 Route::get('/articles', [HomeController::class, 'articles'])->name('articles');
-Route::get('/articles/{id}', [HomeController::class, 'articleDetail'])->name('articles.show');
+Route::get('/articles/{slug}', [HomeController::class, 'articleDetail'])->name('articles.show');
 Route::get('/what_makes_us_different', [HomeController::class, 'whatMakesUsDifferent'])->name('what_makes_us_different');
 
 
