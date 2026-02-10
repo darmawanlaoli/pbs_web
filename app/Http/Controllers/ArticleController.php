@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Mews\Purifier\Facades\Purifier;
 
 class ArticleController extends Controller
 {
@@ -42,5 +44,61 @@ class ArticleController extends Controller
         ]);
 
         return redirect()->route('admin.articles')->with('success', 'Artikel berhasil diterbitkan!');
+    }
+
+    public function edit(Article $article)
+    {
+        $title = 'Edit Article';
+
+        return view('admin.article.edit', compact('title', 'article'));
+    }
+
+    public function update(Request $request, Article $article)
+    {
+        $request->validate([
+            'title'         => 'required|string|max:255',
+            'excerpt'       => 'nullable|string|max:500',
+            'content'       => 'required|string',
+            'image'         => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'meta_keywords' => 'nullable|string|max:255',
+        ]);
+
+        // Update slug jika title berubah
+        if ($article->title !== $request->title) {
+            $slug = Str::slug($request->title);
+
+            if (Article::where('slug', $slug)->where('id', '!=', $article->id)->exists()) {
+                $slug .= '-' . time();
+            }
+        } else {
+            $slug = $article->slug;
+        }
+
+        $content = Purifier::clean($request->content);
+
+        $imagePath = $article->image;
+
+        if ($request->hasFile('image')) {
+            // Hapus image lama
+            if ($article->image && Storage::disk('public')->exists($article->image)) {
+                Storage::disk('public')->delete($article->image);
+            }
+
+            $imagePath = $request->file('image')
+                ->store('articles', 'public');
+        }
+
+        $article->update([
+            'title'         => $request->title,
+            'slug'          => $slug,
+            'excerpt'       => $request->excerpt,
+            'content'       => $content,
+            'image'         => $imagePath,
+            'meta_keywords' => $request->meta_keywords,
+            // user_id biasanya tidak diubah saat edit
+        ]);
+
+        return redirect()->route('admin.articles')
+            ->with('success', 'Article updated successfully');
     }
 }

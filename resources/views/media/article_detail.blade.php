@@ -48,7 +48,8 @@
                             target="_blank" class="btn-wa">
                             <i class="bi bi-whatsapp"></i> WhatsApp
                         </a>
-                        <a href="#" class="btn-fb"><i class="bi bi-facebook"></i> Facebook</a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}"
+                            class="btn-fb"><i class="bi bi-facebook"></i> Facebook</a>
                     </div>
                 </div>
             </article>

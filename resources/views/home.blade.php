@@ -12,7 +12,6 @@
             <div class="ticker-wrapper flex-1 overflow-hidden">
                 <div class="ticker-content flex space-x-8 animate-ticker">
 
-
                     @foreach ($articles as $article)
                     <span class="whitespace-nowrap"><a
                             href="{{ route('articles.show', ['slug' => $article->slug]) }}">📒 {{

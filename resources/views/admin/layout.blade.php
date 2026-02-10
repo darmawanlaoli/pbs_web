@@ -18,7 +18,7 @@
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="../../dist/libs/owl.carousel/dist/assets/owl.carousel.min.css">
     <!-- Core Css -->
-    <link id="themeColors" rel="stylesheet" href="../../dist/css/style.min.css" />
+    <link id="themeColors" rel="stylesheet" href="{{ asset('dist/css/style.min.css') }}" />
 </head>
 
 <body>
@@ -984,18 +984,18 @@
     </div>
     <!-- Customizer -->
     <!-- Import Js Files -->
-    <script src="../../dist/libs/jquery/dist/jquery.min.js"></script>
-    <script src="../../dist/libs/simplebar/dist/simplebar.min.js"></script>
-    <script src="../../dist/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('dist/libs/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('dist/libs/simplebar/dist/simplebar.min.js') }}"></script>
+    <script src="{{ asset('dist/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <!-- core files -->
-    <script src="../../dist/js/app.min.js"></script>
-    <script src="../../dist/js/app.init.js"></script>
-    <script src="../../dist/js/app-style-switcher.js"></script>
-    <script src="../../dist/js/sidebarmenu.js"></script>
-    <script src="../../dist/js/custom.js"></script>
+    <script src="{{ asset('dist/js/app.min.js') }}"></script>
+    <script src="{{ asset('dist/js/app.init.js') }}"></script>
+    <script src="{{ asset('dist/js/app-style-switcher.js') }}"></script>
+    <script src="{{ asset('dist/js/sidebarmenu.js') }}"></script>
+    <script src="{{ asset('dist/js/custom.js') }}"></script>
     <!-- current page js files -->
-    <script src="../../dist/libs/apexcharts/dist/apexcharts.min.js"></script>
-    <script src="../../dist/js/dashboard2.js"></script>
+    <script src="{{ asset('dist/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('dist/js/dashboard2.js') }}"></script>
 </body>
 
 </html>
